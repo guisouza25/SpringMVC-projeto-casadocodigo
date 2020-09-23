@@ -20,14 +20,14 @@ public class UsuarioDAO implements UserDetailsService {
 	
 	public Usuario loadUserByUsername(String email) {
 		
-		List<Usuario> usuarios = manager.createQuery("SELECT u FROM Usuario u WHERE email = :email", Usuario.class)
-					.setParameter("email", email).getResultList();
+		Usuario usuario = manager.createQuery("SELECT u FROM Usuario u WHERE email = :email", Usuario.class)
+					.setParameter("email", email).getSingleResult();
 		
-		if(usuarios.isEmpty()) {
-			throw new UsernameNotFoundException("Usuário " + email + " não encontrado");
-		}
+//		if(usuarios.isEmpty()) {
+//			throw new UsernameNotFoundException("Usuário " + email + " não encontrado");
+//		}
 		
-		return usuarios.get(0);
+		return usuario;
 	}
 
 }
