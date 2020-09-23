@@ -2,6 +2,7 @@ package br.com.casadocodigo.loja.conf;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
@@ -27,6 +28,7 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.i18n.CookieLocaleResolver;
 import org.springframework.web.servlet.i18n.LocaleChangeInterceptor;
+import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 import org.springframework.web.servlet.view.ContentNegotiatingViewResolver;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
@@ -140,7 +142,9 @@ public class AppWebConfiguration extends WebMvcConfigurerAdapter {
 	
 	@Bean
 	public LocaleResolver localeResolver() {
-		return new CookieLocaleResolver(); //guarda o locale através de um cookie
+		CookieLocaleResolver resolver = new CookieLocaleResolver(); //guarda o locale através de um cookie
+		resolver.setDefaultLocale(new Locale("pt", "BR"));
+		return resolver;
 	}
 	
 	@Bean
