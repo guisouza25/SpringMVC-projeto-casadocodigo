@@ -20,7 +20,7 @@ public class UsuarioDAO implements UserDetailsService {
 	
 	public Usuario loadUserByUsername(String email) {
 		
-		List<Usuario> usuarios = manager.createQuery("SELECT u FROM usuario u WHERE email = :email", Usuario.class)
+		List<Usuario> usuarios = manager.createQuery("SELECT u FROM Usuario u WHERE u.email = :email", Usuario.class)
 					.setParameter("email", email).getResultList();
 		
 		if(usuarios.isEmpty()) {
