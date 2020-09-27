@@ -10,7 +10,9 @@
 
 <header id="layout-header">
 	<div class="clearfix container">
-		<a href="<c:url value="/" />" id="logo"> </a>
+		<a href="<c:url value="/" />"> 
+			<img id="logo" alt="Página inicial" src="<c:url value='/resources/imagens/cdc-logo.svg'/>" > 
+		</a>
 		<div id="header-content">
 			<nav id="main-nav">
 				<ul class="clearfix">
@@ -21,18 +23,17 @@
 					<li><a href="<c:url value='/carrinho' />" rel="nofollow"><s:message code="menu.carrinho" arguments="${carrinhoCompras.quantidade}"/></a></li>
 					<li><a href="/pages/sobre-a-casa-do-codigo" rel="nofollow"><fmt:message key="menu.sobre"/></a></li>
 					<li>
-		<div class="navbar">
-	  		<div class="dropdown">
-			    <button class="dropbtn"><fmt:message key="menu.idioma" />
-			      <i class="fa fa-caret-down"></i>
-			    </button>
-	   		 <div class="dropdown-content">
-			     <a href="?locale=pt_BR" rel="nofollow"><fmt:message key="menu.pt"/></a>
-				 <a href="?locale=en_US" rel="nofollow"><fmt:message key="menu.en"/></a>
-	   		 </div>
-		  </div>
-		</div>
-					
+						<div class="navbar">
+					  		<div class="dropdown">
+							    <button class="dropbtn"><fmt:message key="menu.idioma" />
+							      <i class="fa fa-caret-down"></i>
+							    </button>
+					   		 <div class="dropdown-content">
+							     <a href="?locale=pt_BR" rel="nofollow"><fmt:message key="menu.pt"/></a>
+								 <a href="?locale=en_US" rel="nofollow"><fmt:message key="menu.en"/></a>
+					   		 </div>
+						  </div>
+						</div>
 					</li>	
 				</ul>
 			</nav>
