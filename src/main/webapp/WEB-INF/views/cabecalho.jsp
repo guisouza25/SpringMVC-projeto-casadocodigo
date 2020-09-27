@@ -27,7 +27,7 @@
 			      <i class="fa fa-caret-down"></i>
 			    </button>
 	   		 <div class="dropdown-content">
-			     <a href="?locale=pt" rel="nofollow"><fmt:message key="menu.pt"/></a>
+			     <a href="?locale=pt_BR" rel="nofollow"><fmt:message key="menu.pt"/></a>
 				 <a href="?locale=en_US" rel="nofollow"><fmt:message key="menu.en"/></a>
 	   		 </div>
 		  </div>
