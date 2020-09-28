@@ -40,6 +40,7 @@ import br.com.casadocodigo.loja.dao.ProdutoDAO;
 import br.com.casadocodigo.loja.infra.FileSaver;
 import br.com.casadocodigo.loja.modelo.CarrinhoCompras;
 
+
 @EnableWebMvc
 @ComponentScan(basePackageClasses = { HomeController.class, ProdutosController.class, ProdutoDAO.class,
 		FileSaver.class, CarrinhoCompras.class })
@@ -142,7 +143,7 @@ public class AppWebConfiguration extends WebMvcConfigurerAdapter {
 	
 	@Bean
 	public LocaleResolver localeResolver() {
-		CookieLocaleResolver resolver = new CookieLocaleResolver(); //guarda o locale através de um cookie
+		SessionLocaleResolver resolver = new SessionLocaleResolver(); //guarda o locale através de um cookie
 		resolver.setDefaultLocale(new Locale("pt", "BR"));
 		return resolver;
 	}

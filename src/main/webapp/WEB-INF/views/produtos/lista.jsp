@@ -58,9 +58,9 @@
       
 	<div class="container">
 	
-	<div>
-		<h2>Lista de Produtos  </h2>
-		<h4 class="text-center" >${msg }</h4>
+	<div class="container">
+		<h2>Lista de Produtos</h2>
+		<h3 class="text-center" >${msg }</h3>
 	</div>
 	
 	<table class="table table-bordered table-hover"  >

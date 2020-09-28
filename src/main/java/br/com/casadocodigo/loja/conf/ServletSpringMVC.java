@@ -45,11 +45,11 @@ public class ServletSpringMVC extends AbstractAnnotationConfigDispatcherServletI
 		//para que o arquivo seja enviado do mesmo jeito que veio. Com mesmo nome
 	}
 	
-//	@Override
-//	public void onStartup(ServletContext servletContext) throws ServletException {
-//		super.onStartup(servletContext);
-//		servletContext.addListener(RequestContextListener.class);
-//		servletContext.setInitParameter("spring.profiles.active", "dev");
-//	}
+	@Override
+	public void onStartup(ServletContext servletContext) throws ServletException {
+		super.onStartup(servletContext);
+		servletContext.addListener(RequestContextListener.class);
+		servletContext.setInitParameter("spring.profiles.active", "dev");
+	}
 	 
 }

@@ -7,7 +7,13 @@
 <tags:pageTemplate titulo="Livros de Java, SOA, Android, iPhone, Ruby on Rails e muito mais"> 
 	
 	<section id="index-section" class="container middle">
-		<h1 class="cdc-call">Últimos dias com os preços promocionais. Aproveite!</h1>
+		
+		<c:if test="${not empty message }">
+			<h1 class="cdc-call">${message }</h1>
+		</c:if>
+		<c:if test="${empty message }">
+			<h1 class="cdc-call">Últimos dias com os preços promocionais. Aproveite!</h1>
+		</c:if>
 		
 		<ul class="clearfix book-collection">
 			<c:forEach var="produto" items="${produtos }">

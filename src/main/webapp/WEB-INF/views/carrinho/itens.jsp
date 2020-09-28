@@ -9,12 +9,6 @@
 	<jsp:attribute name="extraScripts">
 		<script> 
 			console.log("Finalização de compra de ${carrinhoCompras.quantidade} itens"); 
-			if('${sucesso}' != '') {
-				alert('${sucesso}');
-			}
-			if('${erroPagamento }' != '') {
-				alert('${erroPagamento }')
-			}
 		</script>
 		
 		

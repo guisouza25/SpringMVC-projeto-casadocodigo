@@ -60,4 +60,8 @@ public class CarrinhoCompras {
 		itens.remove(new CarrinhoItem(produto, tipoPreco));
 	}
 	
+	public void clear() {
+		this.itens.clear();
+	}
+	
 }	

@@ -50,19 +50,21 @@ public class PagamentoController {
 				//precisa dessa classe para enviar um 'value' - JSON
 				String response = restTemplate.postForObject(uri, new DadosPagamento(carrinhoCompras.getTotal()), 
 						String.class); //mensagem de retorno
+				
 				sendSuccessEmail(usuario);
-				redirectAttributes.addFlashAttribute("sucesso", response + "! Você receberá um e-mail com os dados da compra. ");
-				return new ModelAndView("redirect:/carrinho");
+				carrinhoCompras.clear();
+				
+				redirectAttributes.addFlashAttribute("message", response + "! Você receberá um e-mail com os dados da compra. ");
+				return new ModelAndView("redirect:/");
 				
 			} catch (HttpClientErrorException e) {
 				e.printStackTrace();
-				String msg = e.getMessage();
-				redirectAttributes.addFlashAttribute("erroPagamento", msg);
-				return new ModelAndView("redirect:/carrinho");
+				String msg = "Compra não aprovada. " + e.getResponseBodyAsString();
+				
+				redirectAttributes.addFlashAttribute("message", msg);
+				return new ModelAndView("redirect:/");
 			}
-			
 		};
-		
 	}
 
 	private void sendSuccessEmail(Usuario usuario) {
