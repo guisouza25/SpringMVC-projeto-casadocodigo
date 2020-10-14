@@ -4,27 +4,27 @@
 		<div id="collections-footer">
 			<p class="footer-title">Coleções de Programação</p>
 			<ul class="footer-text-links">
-				<li><a href="/collections/livros-de-java">Java</a></li>
-				<li><a href="/collections/livros-desenvolvimento-web">Desenvolvimento Web</a></li>
-				<li><a href="/collections/livros-de-mobile">Mobile</a></li>
-				<li><a href="/collections/games">Games</a></li>
-				<li><a href="/collections/livros-de-front-end">Front End</a></li>
+				<li><a href="#" onclick="return false;">Java</a></li>
+				<li><a href="#" onclick="return false;">Desenvolvimento Web</a></li>
+				<li><a href="#" onclick="return false;">Mobile</a></li>
+				<li><a href="#" onclick="return false;">Games</a></li>
+				<li><a href="#" onclick="return false;">Front End</a></li>
 			</ul>
 			<p class="footer-title">Outros Assuntos</p>
 			<ul class="footer-text-links">
-				<li><a href="/collections/livros-de-agile">Agile</a></li>
-				<li><a href="/collections/outros">e outros...</a></li>
+				<li><a href="#" onclick="return false;">Agile</a></li>
+				<li><a href="#" onclick="return false;">e outros...</a></li>
 			</ul>
 		</div>
 		<div id="social-footer">
 			<p class="footer-title">Links da Casa do Código</p>
 			<ul class="footer-text-links">
-				<li><a href="http://livros.casadocodigo.com.br" rel="nofollow">Meus E-books</a></li>
-				<li><a href="/pages/sobre-a-casa-do-codigo">Sobre a Casa do Código</a></li>
-				<li><a href="/pages/perguntas-frequentes">Perguntas Frequentes</a></li>
-				<li><a href="https://www.caelum.com.br">Caelum - Ensino e Inovação</a></li>
-				<li><a href="http://www.codecrushing.com/" rel="nofollow">Code Crushing</a></li>
-				<li><a href="http://www.casadocodigo.com.br/pages/politica-de-privacidade" rel="nofollow">Política de Privacidade</a></li>
+				<li><a href="#" onclick="return false;" rel="nofollow">Meus E-books</a></li>
+				<li><a href="#" onclick="return false;">Sobre a Casa do Código</a></li>
+				<li><a href="#" onclick="return false;">Perguntas Frequentes</a></li>
+				<li><a href="#" onclick="return false;">Caelum - Ensino e Inovação</a></li>
+				<li><a href="#" onclick="return false;" rel="nofollow">Code Crushing</a></li>
+				<li><a href="#" onclick="return false;" rel="nofollow">Política de Privacidade</a></li>
 			</ul>
 			<p class="footer-title">Redes Sociais</p>
 			<ul>

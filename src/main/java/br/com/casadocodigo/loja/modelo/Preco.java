@@ -10,7 +10,18 @@ public class Preco {
 	private BigDecimal valor;
 	private BigDecimal valorTabela;
 	private TipoPreco tipo;
+	
+	
+	public Preco() {
+	}
+	
+	// para facilitar a criacao dos produtos no HomeController
+	public Preco(BigDecimal valor, TipoPreco tipo) {
+		this.valor = valor;
+		this.tipo = tipo;
+	}
 
+	
 	public BigDecimal getValor() {
 		return valor;
 	}
@@ -18,7 +29,6 @@ public class Preco {
 	public void setValor(BigDecimal valor) {
 		this.valor = valor;
 	}
-	
 
 	public BigDecimal getValorTabela() {
 		return valorTabela;
@@ -35,10 +45,10 @@ public class Preco {
 	public void setTipo(TipoPreco tipo) {
 		this.tipo = tipo;
 	}
-	
+
 	@Override
 	public String toString() {
-		return  this.tipo.name() + " - R$" + this.valor;
+		return this.tipo.name() + " - R$" + this.valor;
 	}
 
 }

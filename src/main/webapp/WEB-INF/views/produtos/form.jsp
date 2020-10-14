@@ -64,7 +64,7 @@
 	
 	<br>
 	<br>
-						<!-- /casadocodigo/produtos -->
+				 	<!-- /casadocodigo/produtos -->
 	<form:form servletRelativeAction="/produtos" method="post" modelAttribute="produto" enctype="multipart/form-data">
 		
 		<div class="form-group">

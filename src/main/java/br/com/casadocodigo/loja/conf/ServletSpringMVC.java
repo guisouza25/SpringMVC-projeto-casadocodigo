@@ -35,7 +35,7 @@ public class ServletSpringMVC extends AbstractAnnotationConfigDispatcherServletI
 	@Override
 	protected Filter[] getServletFilters() {
 		return new Filter[] {new OpenEntityManagerInViewFilter()};
-		//OpenEntityManagerInViewFilter - Manter o EntityManager aberto em todo o processo da requisição
+		//Manter o EntityManager aberto em todo o processo da requisição até a view
 	}
 	
 	@Override
@@ -45,11 +45,11 @@ public class ServletSpringMVC extends AbstractAnnotationConfigDispatcherServletI
 		//para que o arquivo seja enviado do mesmo jeito que veio. Com mesmo nome
 	}
 	
-//	@Override
-//	public void onStartup(ServletContext servletContext) throws ServletException {
-//		super.onStartup(servletContext);
-//		servletContext.addListener(RequestContextListener.class);
-//		servletContext.setInitParameter("spring.profiles.active", "dev");
-//	}
+	@Override
+	public void onStartup(ServletContext servletContext) throws ServletException {
+		super.onStartup(servletContext);
+		servletContext.addListener(RequestContextListener.class);
+		servletContext.setInitParameter("spring.profiles.active", "dev");
+	}
 	 
 }

@@ -23,7 +23,11 @@
 	<div class="container">
 	
 	<h2>Login Casa do Código</h2>
-						
+	
+	<c:if test="${not empty errorMessage}">
+		<div class="alert alert-danger" role="alert">${errorMessage}</div>
+	</c:if>
+							
 	<form:form servletRelativeAction="/login" method="post">
 		<div class="form-group">
 			<label>Email</label>

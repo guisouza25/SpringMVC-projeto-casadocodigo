@@ -19,6 +19,7 @@
 					<security:authorize access="isAuthenticated()"> <!--hasRole('HOLE_ADMIN')-->
 						<li><a href="<c:url value='/produtos' />" rel="nofollow">Lista de Produtos</a></li>
 						<li><a href="<c:url value='/produtos/form' />" rel="nofollow">Cadastro de Produtos</a></li>
+						<li><a href='<c:url value="/logout"/>'  rel="nofollow" >Sair</a></li>	
 					</security:authorize>
 					<li><a href="<c:url value='/carrinho' />" rel="nofollow"><s:message code="menu.carrinho" arguments="${carrinhoCompras.quantidade}"/></a></li>
 					<li><a href="/pages/sobre-a-casa-do-codigo" rel="nofollow"><fmt:message key="menu.sobre"/></a></li>
@@ -34,9 +35,9 @@
 					   		 </div>
 						  </div>
 						</div>
-					</li>	
+					</li>
 				</ul>
-			</nav>
+			</nav>	
 		</div>
 	</div>
 	

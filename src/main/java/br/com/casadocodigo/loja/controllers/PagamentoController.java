@@ -29,8 +29,14 @@ public class PagamentoController {
 	private MailSender sender;
 	
 	@RequestMapping(value = "/cadastro", method = RequestMethod.POST)
-	public String cadastro() {
-		return "cadastro";
+	public ModelAndView cadastro() {
+		if (carrinhoCompras.getItens().isEmpty()) {
+			String msg = "Carrinho de compras vazio! Adicione algum livro.";
+			ModelAndView modelAndView = new ModelAndView("error");
+			modelAndView.addObject("msg", msg);
+			return modelAndView;
+		}
+		return new ModelAndView("cadastro");
 	}
 	
 	@RequestMapping(value = "/finalizar", method = RequestMethod.POST)

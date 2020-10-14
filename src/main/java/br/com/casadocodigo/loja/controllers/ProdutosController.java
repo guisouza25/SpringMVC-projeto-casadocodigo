@@ -95,7 +95,7 @@ public class ProdutosController {
 		if(result.hasErrors()) {
 			return form(produto);
 		}
-
+		
 		String path = fileSaver.uploadToAwsS3(sumario);
 		produto.setSumarioPath(path);
 		

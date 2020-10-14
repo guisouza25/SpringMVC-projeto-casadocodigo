@@ -57,36 +57,36 @@
      </nav> 
       
 	<div class="container">
+		<div >
+			<h2>Lista de Produtos</h2>
+			<c:if test="${not empty msg }">
+				<div class="alert alert-success" role="alert">${msg}</div>
+			</c:if>
+		</div>
 	
-	<div class="container">
-		<h2>Lista de Produtos</h2>
-		<h3 class="text-center" >${msg }</h3>
-	</div>
-	
-	<table class="table table-bordered table-hover"  >
-		<tr>
-			<th class="text-center">Título</th>
-			<th class="text-center">Descrição</th>
-			<th class="text-center">Precos</th>
-			<th class="text-center">Páginas</th>
-		</tr>
-		<c:forEach var="produto" items="${produtos}" varStatus="status">
+		<table class="table table-bordered table-hover"  >
 			<tr>
-				<td class="text-center">
-					<a href= "<c:url value="produtos/detalhe/${produto.id }" />" >${produto.titulo}  </a><br><br>
-					<a href= "<c:url value="produtos/editar/${produto.id }" />" >editar</a>
-				</td>
-				<td>${produto.descricao}</td>
-				<td>
-					<c:forEach var="preco" items="${produto.precos}">
-						${preco.tipo} - ${preco.valor}
-					</c:forEach>
-				</td>
-				<td class="text-center" >${produto.paginas}</td>
-			</tr>	
-		</c:forEach>
-	</table>
-	
+				<th class="text-center">Título</th>
+				<th class="text-center">Descrição</th>
+				<th class="text-center">Precos</th>
+				<th class="text-center">Páginas</th>
+			</tr>
+			<c:forEach var="produto" items="${produtos}" varStatus="status">
+				<tr>
+					<td class="text-center">
+						<a href= "<c:url value="produtos/detalhe/${produto.id }" />" >${produto.titulo}  </a><br><br>
+						<a href= "<c:url value="produtos/editar/${produto.id }" />" >editar</a>
+					</td>
+					<td>${produto.descricao}</td>
+					<td>
+						<c:forEach var="preco" items="${produto.precos}">
+							${preco.tipo} - ${preco.valor}
+						</c:forEach>
+					</td>
+					<td class="text-center" >${produto.paginas}</td>
+				</tr>	
+			</c:forEach>
+		</table>
 	</div>
 	
 </body>
