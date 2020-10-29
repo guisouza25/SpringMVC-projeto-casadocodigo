@@ -15,7 +15,7 @@ import br.com.casadocodigo.loja.modelo.TipoPreco;
 import br.com.casadocodigo.loja.modelo.Usuario;
 
 @Transactional
-@Component
+@Component	
 public class PopulaBanco {
 	
 	@Autowired

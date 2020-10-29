@@ -43,7 +43,7 @@ import br.com.casadocodigo.loja.modelo.CarrinhoCompras;
 
 @EnableWebMvc
 @ComponentScan(basePackageClasses = { HomeController.class, ProdutosController.class, ProdutoDAO.class,
-		FileSaver.class, CarrinhoCompras.class })
+		FileSaver.class, CarrinhoCompras.class, InitBean.class })
 @EnableCaching
 public class AppWebConfiguration extends WebMvcConfigurerAdapter {
 	                                        //para funcionar o css

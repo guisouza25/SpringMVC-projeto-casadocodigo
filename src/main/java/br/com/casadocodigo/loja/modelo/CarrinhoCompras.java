@@ -15,7 +15,7 @@ import org.springframework.web.context.WebApplicationContext;
 //a aplicação inteira - Escopo application
 //Já está mapeado. O getQuantidade vai parecer no jsp - config InternalResourceViewResolver
 @Component
-@Scope(value = WebApplicationContext.SCOPE_REQUEST, //Padrão é application
+@Scope(value = WebApplicationContext.SCOPE_SESSION, //Padrão é application
 		proxyMode = ScopedProxyMode.TARGET_CLASS) //nao precisar mudar o escopo dos controller que usam o CarrinhoCompras
 public class CarrinhoCompras {
 	
