@@ -21,7 +21,7 @@ O projeto encontra-se publicado (deployed) no Heroku. Acesse o link:
 ## Acesso de ADMIN
 
 A aplicação possui funcionalidades gerenciais na qual é possivel acessar resumidamente todos os livros cadastrados, bem como editar e inserir novos livros. 
-Acesse o link informando email e senha:
+Acesse a URI informando email e senha:
 
 	https://cdcspringmvc-guilhermef.herokuapp.com/login
 
@@ -32,8 +32,8 @@ Senha: 123456
 ## Compilação
 
 Caso queira compilar o projeto e subir em um servidor local pode excutar o comando `mvn clean package` para gerar o WAR ou importar o projeto no Eclipse. 
-A aplicação utiliza o MySql e já deve existir o database `casadocodigo`. Caso queira trocar o banco altere a classe `JPAConfiguration`. Acesse o seguinte link:
+A aplicação utiliza o MySql e já deve existir o database `casadocodigo`. Caso queira trocar o banco altere a classe `JPAConfiguration`. Acesse a url:
 
 	http://localhost:8080/casadocodigo
   
-acessando /login para ADMIN.
+acessando `http://localhost:8080/casadocodigo/login` para o acesso de admin.
