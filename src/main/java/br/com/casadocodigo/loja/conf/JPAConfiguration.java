@@ -69,9 +69,15 @@ public class JPAConfiguration {
 	@Profile(value = "dev")
 	public DataSource dataSource() {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
+<<<<<<< HEAD
 		dataSource.setUsername("root");
 		dataSource.setPassword("");
 		dataSource.setUrl("jdbc:mysql://banco-casadocodigo.cjifs5khrgsc.sa-east-1.rds.amazonaws.com/casadocodigo?serverTimezone=UTC&useUnicode=yes&characterEncoding=UTF-8");
+=======
+		dataSource.setUsername("");
+		dataSource.setPassword("");
+		dataSource.setUrl("jdbc:mysql://localhost/casadocodigo?serverTimezone=UTC&useUnicode=yes&characterEncoding=UTF-8");
+>>>>>>> 92c092d5fb7b9c02b6b7a663fe3381c18c1c2041
 		dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
 		return dataSource;
 	}
