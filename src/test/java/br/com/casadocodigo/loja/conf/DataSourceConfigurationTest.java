@@ -27,9 +27,9 @@ public class DataSourceConfigurationTest {
 	@Profile(value = "test")
 	public Properties additionalProperties() {
 		Properties props = new Properties();
-		props.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");
+		props.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL8Dialect");
 		props.setProperty("hibernate.show_sql", "true");
-		props.setProperty("hibernate.hbm2ddl.auto", "create");
+		props.setProperty("hibernate.hbm2ddl.auto", "drop-and-create");
 		return props;
 	}
 	

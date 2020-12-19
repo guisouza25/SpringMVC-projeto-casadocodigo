@@ -76,7 +76,7 @@ public class ProdutosController {
 		
 		//para ter a opção de não fazer upload de imagem
 		try {
-			String path = fileSaver.uploadToAwsS3(sumario);
+			String path = fileSaver.saveS3(sumario);
 			produto.setSumarioPath(path);
 			produtoDAO.altera(produto, id);
 		} catch (com.amazonaws.services.s3.model.AmazonS3Exception e) {

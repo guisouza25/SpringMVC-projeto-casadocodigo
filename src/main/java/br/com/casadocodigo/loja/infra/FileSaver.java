@@ -15,14 +15,34 @@ import com.amazonaws.regions.Region;
 import com.amazonaws.regions.Regions;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3Client;
+import com.amazonaws.services.s3.model.CannedAccessControlList;
 import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.PutObjectRequest;
 
 @Component
 public class FileSaver {
+
+	@Autowired
+	private AmazonS3 amazonS3;
+	
+	private static final String BUCKET = "casadocodigo-imagens";
 	
 	@Autowired
 	private HttpServletRequest request;
+	
+	
+	public String saveS3(MultipartFile file) {
+		try {
+			amazonS3.putObject(new PutObjectRequest(
+					BUCKET, file.getOriginalFilename(), file.getInputStream(), null)
+					.withCannedAcl(CannedAccessControlList.PublicRead));
+		} catch (IllegalStateException | IOException e) {
+			throw new RuntimeException();
+		}
+		String sumarioPath = "https://casadocodigo-imagens.s3-sa-east-1.amazonaws.com/" + file.getOriginalFilename();
+		return sumarioPath;
+	}
+	
 	
 	public String write(String baseFolder, MultipartFile file) {
 		

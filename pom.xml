@@ -244,11 +244,20 @@
 			<scope>test</scope>
 		</dependency>
 
-		<dependency>
+		<!-- <dependency>
 			<groupId>com.amazonaws</groupId>
 			<artifactId>aws-java-sdk</artifactId>
-			<version>1.9.6</version>
+			<version>1.2.1</version>
+		</dependency> -->
+		
+		<!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-aws -->
+		<dependency>
+		    <groupId>org.springframework.cloud</groupId>
+		    <artifactId>spring-cloud-aws-context</artifactId>
+		    <version>1.2.1.RELEASE</version>
+		    <type>pom</type>
 		</dependency>
+		
 
 	</dependencies>
 
