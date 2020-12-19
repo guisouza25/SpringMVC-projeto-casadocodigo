@@ -7,23 +7,23 @@ Neste projeto foram utilizadas as seguintes ferramentas:
 * Spring MVC
 * Spring Security
 * Hibernate JPA
-* Amazon S3
+* Amazon Web Services
 * Boostrap
 * Apache TomCat versão 9
 * JDK versão 8
 
 ## Deploy
 
-O projeto encontra-se publicado (deployed) no Heroku. Acesse o link:
+O projeto encontra-se publicado (deployed) na Amazon Web Services em uma instância EC2, com um banco de dados RDS e utilizando um Bucket S3 para armazenamento das imagens. Acesse o link:
 
-	https://cdcspringmvc-guilhermef.herokuapp.com
+	http://15.228.73.52:8080/casadocodigo/
 
 ## Acesso de ADMIN
 
 A aplicação possui funcionalidades gerenciais na qual é possivel acessar resumidamente todos os livros cadastrados, bem como editar e inserir novos livros. 
 Acesse a URI informando email e senha:
 
-	https://cdcspringmvc-guilhermef.herokuapp.com/login
+	http://15.228.73.52:8080/casadocodigo/login
 
 Email: admin@casadocodigo.com.br
 
