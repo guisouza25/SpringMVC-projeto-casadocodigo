@@ -61,7 +61,7 @@ public class JPAConfiguration {
 		Properties props = new Properties();
 		props.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL8Dialect");
 		props.setProperty("hibernate.show_sql", "true");
-		props.setProperty("hibernate.hbm2ddl.auto", "create");
+		props.setProperty("hibernate.hbm2ddl.auto", "drop-and-create");
 		return props;
 	}
 	
@@ -70,8 +70,8 @@ public class JPAConfiguration {
 	public DataSource dataSource() {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
 		dataSource.setUsername("root");
-		dataSource.setPassword("guuuih25");
-		dataSource.setUrl("jdbc:mysql://localhost/casadocodigo?serverTimezone=UTC&useUnicode=yes&characterEncoding=UTF-8");
+		dataSource.setPassword("");
+		dataSource.setUrl("jdbc:mysql://banco-casadocodigo.cjifs5khrgsc.sa-east-1.rds.amazonaws.com/casadocodigo?serverTimezone=UTC&useUnicode=yes&characterEncoding=UTF-8");
 		dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
 		return dataSource;
 	}

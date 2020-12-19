@@ -17,7 +17,7 @@ public class ServletSpringMVC extends AbstractAnnotationConfigDispatcherServletI
 		//root para quando o sistema subir a config ja está pronta. 
 		//SecurityConfiguration tenta injetar o usuarioDAO - JPAConfiguration aqui
 		return new Class[] {AppWebConfiguration.class, JPAProductionConfiguration.class, 
-				JPAConfiguration.class, SecurityConfiguration.class, }; 
+				JPAConfiguration.class, SecurityConfiguration.class, AwsConfiguration.class }; 
 		
 	}
 
