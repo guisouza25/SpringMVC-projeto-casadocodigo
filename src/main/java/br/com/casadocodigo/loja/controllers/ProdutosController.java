@@ -56,8 +56,11 @@ public class ProdutosController {
 	
 	@RequestMapping("/editar/{id}")
 	public ModelAndView editar(@PathVariable("id") Integer id) {
+		
 		Produto produto = produtoDAO.find(id);
+		
 		ModelAndView modelAndView = new ModelAndView("produtos/formEdita");
+		
 		modelAndView.addObject("tipos", TipoPreco.values());
 		modelAndView.addObject("produto", produto);
 		return modelAndView;
@@ -66,9 +69,10 @@ public class ProdutosController {
 	
 	@RequestMapping(value = "/alterar/{id}", method = RequestMethod.POST)
 	@CacheEvict(value = "produtosHome", allEntries = true)
-	public ModelAndView alterar(MultipartFile sumario, @Valid Produto produto, 
-			BindingResult result, @PathVariable("id") Integer id) 
-					throws AmazonServiceException, AmazonClientException, IOException {
+	public ModelAndView alterar(
+			MultipartFile sumario, 
+			@Valid Produto produto, BindingResult result, 
+			@PathVariable("id") Integer id) throws AmazonServiceException, AmazonClientException, IOException {
 		
 		if(result.hasErrors()) {
 			return editar(produto.getId());
@@ -79,6 +83,7 @@ public class ProdutosController {
 			String path = fileSaver.saveS3(sumario);
 			produto.setSumarioPath(path);
 			produtoDAO.altera(produto, id);
+			
 		} catch (com.amazonaws.services.s3.model.AmazonS3Exception e) {
 			produtoDAO.altera(produto, id);
 		} 
@@ -88,15 +93,16 @@ public class ProdutosController {
 	
 	@RequestMapping(method = RequestMethod.POST)
 	@CacheEvict(value = "produtosHome", allEntries = true)// libera o cache toda vez que este metodo for chamado
-	public ModelAndView gravar(MultipartFile sumario, @Valid Produto produto, 
-			BindingResult result, //deve vir depois do produto
-				RedirectAttributes redirectAttributes) throws AmazonServiceException, AmazonClientException, IOException {
+	public ModelAndView gravar(
+			MultipartFile sumario, 
+			@Valid Produto produto, BindingResult result, //deve vir depois do produto
+			RedirectAttributes redirectAttributes) throws AmazonServiceException, AmazonClientException, IOException {
 		
 		if(result.hasErrors()) {
 			return form(produto);
 		}
 		
-		String path = fileSaver.uploadToAwsS3(sumario);
+		String path = fileSaver.saveS3(sumario);
 		produto.setSumarioPath(path);
 		
 		produtoDAO.gravar(produto);

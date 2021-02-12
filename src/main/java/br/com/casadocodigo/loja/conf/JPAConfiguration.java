@@ -34,27 +34,6 @@ public class JPAConfiguration {
 		return factoryBean;
 	}
 	
-//	@Bean
-//	@Profile(value = "dev")
-//	public Properties additionalProperties() {
-//		Properties props = new Properties();
-//		props.setProperty("hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect");
-//		props.setProperty("hibernate.show_sql", "true");
-//		props.setProperty("hibernate.hbm2ddl.auto", "update");
-//		return props;
-//	}
-//	
-//	@Bean
-//	@Profile(value = "dev")
-//	public DataSource dataSource() {
-//		DriverManagerDataSource dataSource = new DriverManagerDataSource();
-//		dataSource.setUsername("postgres");
-//		dataSource.setPassword("guuuih25");
-//		dataSource.setUrl("jdbc:postgresql://localhost:5432/casadocodigo?serverTimezone=UTC&useUnicode=yes&characterEncoding=UTF-8");
-//		dataSource.setDriverClassName("org.postgresql.Driver");
-//		return dataSource;
-//	}
-	
 	@Bean
 	@Profile(value = "dev")
 	public Properties additionalProperties() {
@@ -69,15 +48,9 @@ public class JPAConfiguration {
 	@Profile(value = "dev")
 	public DataSource dataSource() {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
-<<<<<<< HEAD
 		dataSource.setUsername("root");
-		dataSource.setPassword("");
-		dataSource.setUrl("jdbc:mysql://banco-casadocodigo.cjifs5khrgsc.sa-east-1.rds.amazonaws.com/casadocodigo?serverTimezone=UTC&useUnicode=yes&characterEncoding=UTF-8");
-=======
-		dataSource.setUsername("");
-		dataSource.setPassword("");
+		dataSource.setPassword("guuuih25");
 		dataSource.setUrl("jdbc:mysql://localhost/casadocodigo?serverTimezone=UTC&useUnicode=yes&characterEncoding=UTF-8");
->>>>>>> 92c092d5fb7b9c02b6b7a663fe3381c18c1c2041
 		dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
 		return dataSource;
 	}

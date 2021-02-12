@@ -3,3 +3,4 @@ target/
 .classpath
 .project
 Procfile
+aws_accesskey_secretkey

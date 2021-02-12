@@ -14,7 +14,6 @@ import com.amazonaws.AmazonServiceException;
 import com.amazonaws.regions.Region;
 import com.amazonaws.regions.Regions;
 import com.amazonaws.services.s3.AmazonS3;
-import com.amazonaws.services.s3.AmazonS3Client;
 import com.amazonaws.services.s3.model.CannedAccessControlList;
 import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.PutObjectRequest;
@@ -25,22 +24,28 @@ public class FileSaver {
 	@Autowired
 	private AmazonS3 amazonS3;
 	
-	private static final String BUCKET = "casadocodigo-imagens";
+	private static final String BUCKET = "imagens-casadocodigo";
 	
 	@Autowired
 	private HttpServletRequest request;
 	
-	
+
 	public String saveS3(MultipartFile file) {
+		
 		try {
+						
 			amazonS3.putObject(new PutObjectRequest(
-					BUCKET, file.getOriginalFilename(), file.getInputStream(), null)
-					.withCannedAcl(CannedAccessControlList.PublicRead));
+					BUCKET, 
+					file.getOriginalFilename(),
+					file.getInputStream(), null
+					).withCannedAcl(CannedAccessControlList.PublicRead));
+			
 		} catch (IllegalStateException | IOException e) {
+			
 			throw new RuntimeException();
 		}
-		String sumarioPath = "https://casadocodigo-imagens.s3-sa-east-1.amazonaws.com/" + file.getOriginalFilename();
-		return sumarioPath;
+		
+		return "https://imagens-casadocodigo.s3-sa-east-1.amazonaws.com/" + file.getOriginalFilename();
 	}
 	
 	
@@ -66,23 +71,19 @@ public class FileSaver {
 	public String uploadToAwsS3(MultipartFile file) 
 			throws AmazonServiceException, AmazonClientException, IOException {
 		
-		AmazonS3 s3 = new AmazonS3Client();
 		Region saEast1 = Region.getRegion(Regions.SA_EAST_1);
-        s3.setRegion(saEast1);
+		amazonS3.setRegion(saEast1);
         
         String bucketName = "casadocodigo-imagens";
         String key = file.getOriginalFilename();
 		ObjectMetadata fileMetadata = new ObjectMetadata();
 		fileMetadata.setContentLength(file.getSize());
         
-        s3.putObject(new PutObjectRequest(bucketName, key, file.getInputStream(), fileMetadata));
+		amazonS3.putObject(new PutObjectRequest(bucketName, key, file.getInputStream(), fileMetadata));
         
         String sumarioPath = "https://casadocodigo-imagens.s3-sa-east-1.amazonaws.com/" + key;
         return sumarioPath;
 	}
 	
-	public String getBucketUrl() {
-		return "https://casadocodigo-imagens.s3-sa-east-1.amazonaws.com/";
-	}
 	
 }
