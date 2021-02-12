@@ -48,8 +48,8 @@ public class JPAConfiguration {
 	@Profile(value = "dev")
 	public DataSource dataSource() {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
-		dataSource.setUsername("root");
-		dataSource.setPassword("guuuih25");
+		dataSource.setUsername("");
+		dataSource.setPassword("");
 		dataSource.setUrl("jdbc:mysql://localhost/casadocodigo?serverTimezone=UTC&useUnicode=yes&characterEncoding=UTF-8");
 		dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
 		return dataSource;
