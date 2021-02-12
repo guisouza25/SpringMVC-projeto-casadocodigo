@@ -51,8 +51,8 @@ public class JPAProductionConfiguration {
 	@Bean
 	public DataSource dataSource() {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
-		dataSource.setUsername("root");
-		dataSource.setPassword("guuuih25");
+		dataSource.setUsername("");
+		dataSource.setPassword("");
 		dataSource.setUrl("jdbc:mysql://db-casadocodigo.cz2aqisaaguf.sa-east-1.rds.amazonaws.com:3306/casadocodigo?serverTimezone=UTC&useUnicode=yes&characterEncoding=UTF-8");
 		dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
 		return dataSource;
